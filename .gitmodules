@@ -1,0 +1,3 @@
+[submodule "wuanlife_parchment"]
+	path = wuanlife_parchment
+	url = https://github.com/lwyj123/wuanlife_parchment.git
