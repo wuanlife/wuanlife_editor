@@ -103,10 +103,22 @@ class Editor {
     return this.update(new Delta().retain(index).retain(length, clone(formats)));
   }
 
+  /**
+   * 获取编辑器内容
+   * @param {any} index 需要获取内容的index
+   * @param {any} length 需要获取内容的length
+   * @returns {Delta} 新的Delta对象
+   * @memberof Editor
+   */
   getContents(index, length) {
     return this.delta.slice(index, index + length);
   }
 
+  /**
+   * 获得当前Delta，深拷贝
+   * @returns {Delta} 新的Delta对象
+   * @memberof Editor
+   */
   getDelta() {
     return this.scroll.lines().reduce((delta, line) => {
       return delta.concat(line.delta());
@@ -190,6 +202,15 @@ class Editor {
     return this.applyDelta(delta);
   }
 
+  /**
+   * 调用多个会变更内容的API会触发此函数，更新Selection的delta属性。
+   *
+   * @param {Delta} change 内容的变更，用Delta来描述
+   * @param {Array} mutations ???没找到应用的地方
+   * @param {Number | undefined} cursorIndex ???没找到应用的地方
+   * @returns {Delta} 变化后的内容Delta对象
+   * @memberof Editor
+   */
   update(change, mutations = [], cursorIndex = undefined) {
     let oldDelta = this.delta;
     if (mutations.length === 1 &&

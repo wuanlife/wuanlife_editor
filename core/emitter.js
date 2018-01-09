@@ -17,6 +17,11 @@ EVENTS.forEach(function(eventName) {
 });
 
 
+/**
+ * Emitter，基于EventEmitter并封装了对于DOM的监听，其实就是加入了个dom节点。
+ * @class Emitter
+ * @extends {EventEmitter}
+ */
 class Emitter extends EventEmitter {
   constructor() {
     super();

@@ -8,6 +8,7 @@ class Picker {
     this.buildPicker();
     this.select.style.display = 'none';
     this.select.parentNode.insertBefore(this.container, this.select);
+    // buildPicker中被赋值
     this.label.addEventListener('mousedown', () => {
       this.container.classList.toggle('ql-expanded');
     });

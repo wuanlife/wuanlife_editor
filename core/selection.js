@@ -15,6 +15,10 @@ class Range {
 }
 
 
+/**
+ * Selection相关，selectionchange事件也是在这监听
+ * @class Selection
+ */
 class Selection {
   constructor(scroll, emitter) {
     this.emitter = emitter;
@@ -27,6 +31,7 @@ class Selection {
     this.lastRange = this.savedRange = new Range(0, 0);
     this.handleComposition();
     this.handleDragging();
+    // Quill通过selectionchange事件来监听文本变化
     this.emitter.listenDOM('selectionchange', document, () => {
       if (!this.mouseDown) {
         setTimeout(this.update.bind(this, Emitter.sources.USER), 1);

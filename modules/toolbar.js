@@ -159,6 +159,13 @@ function addButton(container, format, value) {
   container.appendChild(input);
 }
 
+/**
+ * 添加toolbar的控制器的DOM，也就是加粗，插入图片那些。
+ *
+ * @param {any} container quill的container
+ * @param {any} groups controls的分组
+ * @return {undefined}
+ */
 function addControls(container, groups) {
   if (!Array.isArray(groups[0])) {
     groups = [groups];

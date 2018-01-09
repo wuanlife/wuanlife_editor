@@ -16,6 +16,13 @@ class Tooltip {
     this.root.classList.add('ql-hidden');
   }
 
+  /**
+   * 计算tooltip位置
+   *
+   * @param {any} reference 需要显示tooltip的dom元素
+   * @returns {number} 左右偏移量？
+   * @memberof Tooltip
+   */
   position(reference) {
     let left = reference.left + reference.width/2 - this.root.offsetWidth/2;
     // root.scrollTop should be 0 if scrollContainer !== root

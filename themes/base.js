@@ -56,6 +56,7 @@ class BaseTheme extends Theme {
     return module;
   }
 
+  // 过滤无效Button并设置icon
   buildButtons(buttons, icons) {
     buttons.forEach((button) => {
       let className = button.getAttribute('class') || '';
